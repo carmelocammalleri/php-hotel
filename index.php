@@ -41,7 +41,6 @@ $hotels = [
 
 ];
 
-  var_dump($hotels);
 
 
 ?>
@@ -54,15 +53,17 @@ $hotels = [
   <title>Hotel</title>
 </head>
 <body>
+
+<!-- Lista Hotel -->
   <div>
     <?php foreach($hotels as $hotel): ?>
     <h1><?php echo $hotel["name"]; ?></h1> 
-    <span><?php echo $hotel["description"]; ?></span> <br> 
-    <span><?php if($hotel['parking'] === true)? 'yes': 'no'; ?></span> <br> 
-    <span><?php echo $hotel["vote"]; ?></span> <br> 
-    <span><?php echo $hotel["distance_to_center"]; ?></span> 
-
+    <span>Descrizione: <?php echo $hotel["description"]; ?></span> <br> 
+    <span>Posto auto:<?php echo $hotel['parking']; ?></span> <br> 
+    <span>Voto:<?php echo $hotel["vote"]; ?></span> <br> 
+    <span>Distanza dal centro:<?php echo $hotel["distance_to_center"]; ?> Km</span> 
     <?php endforeach?>
   </div>
+
 </body>
 </html>
