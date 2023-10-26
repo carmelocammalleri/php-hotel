@@ -41,8 +41,6 @@ $hotels = [
 
 ];
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +89,19 @@ $hotels = [
         <!-- /informazioni richieste -->
     
     </table>
+
+
+    <!-- radio button -->
+    <form class="d-flex" action="parking.php" method="POST">
+
+    <input type="radio" name="contact" id="contact_email" value="true" />
+    <label for="contact_email">Parking</label>
+
+    <input type="radio" name="contact" id="contact_phone" value="false" />
+    <label for="contact_phone">No parking</label>
+
+      <input type="submit">
+    </form> 
 
   </div>
 
