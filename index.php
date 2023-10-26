@@ -54,12 +54,12 @@ $hotels = [
 </head>
 <body>
 
-<!-- Lista Hotel -->
+<!-- ista Hotel -->
   <div>
     <?php foreach($hotels as $hotel): ?>
     <h1><?php echo $hotel["name"]; ?></h1> 
     <span>Descrizione: <?php echo $hotel["description"]; ?></span> <br> 
-    <span>Posto auto:<?php echo $hotel['parking']; ?></span> <br> 
+    <span>Posto auto: <?php echo ($hotel['parking'] === true)? 'yes': 'no'; ?></span> <br>
     <span>Voto:<?php echo $hotel["vote"]; ?></span> <br> 
     <span>Distanza dal centro:<?php echo $hotel["distance_to_center"]; ?> Km</span> 
     <?php endforeach?>
