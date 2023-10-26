@@ -61,48 +61,39 @@ $hotels = [
 
 <!-- ista Hotel -->
   <div>
-    <?php foreach($hotels as $hotel): ?>
-    <h1><?php echo $hotel["name"]; ?></h1> 
-    <span>Descrizione: <?php echo $hotel["description"]; ?></span> <br> 
-    <span>Posto auto: <?php echo ($hotel['parking'] === true)? 'yes': 'no'; ?></span> <br>
-    <span>Voto:<?php echo $hotel["vote"]; ?></span> <br> 
-    <span>Distanza dal centro:<?php echo $hotel["distance_to_center"]; ?> Km</span> 
-    <?php endforeach?>
+    <h1></h1> 
+    <span>Descrizione:  ?></span> <br> 
+    <span>Posto auto: </span> <br>
+    <span>Voto:</span> <br> 
+    <span> Km</span> 
+
   </div>
 
 
   <table class="table">
-  <thead>
+    <!-- caratteristiche hotel -->
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrizione</th>
+        <th scope="col">Posto auto</th>
+        <th scope="col">Voto</th>
+        <th scope="col">Distanza centro</th>
+      </tr>
+    </thead>
+    <!-- /caratteristiche hotel -->
 
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Descrizione</th>
-      <th scope="col">Posto auto</th>
-      <th scope="col">Voto</th>
-      <th scope="col">Distanza centro</th>
-    </tr>
-  </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <?php foreach($hotels as $hotel): ?>
+      <tr>
+        <th scope="row"><?php echo $hotel["name"]; ?></th>
+        <td><?php echo $hotel["description"];?></td>
+        <td><?php echo ($hotel['parking'] === true)? 'yes': 'no'; ?></td>
+        <td><?php echo $hotel["vote"]; ?></td>
+        <td><?php echo $hotel["distance_to_center"]; ?> Km</td>
+      </tr>
+    <?php endforeach?>
   </tbody>
-
 
 </table>
 
