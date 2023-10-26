@@ -60,35 +60,39 @@ $hotels = [
 <body>
 
 <!-- Lista Hotel -->
+  <div class="container">
+    <h1>Hotel Lombardia</h1>
 
-  <table class="table">
-    <!-- caratteristiche hotel -->
-    <thead>
-      <tr>
-        <th scope="col">Nome</th>
-        <th scope="col">Descrizione</th>
-        <th scope="col">Posto auto</th>
-        <th scope="col">Voto</th>
-        <th scope="col">Distanza centro</th>
-      </tr>
-    </thead>
-    <!-- /caratteristiche hotel -->
+    <table class="table table-dark table-striped border my-3">
+        <!-- caratteristiche hotel -->
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrizione</th>
+            <th scope="col">Posto auto</th>
+            <th scope="col">Voto</th>
+            <th scope="col">Distanza centro</th>
+          </tr>
+        </thead>
+        <!-- /caratteristiche hotel -->
+    
+        <!-- informazioni richieste -->
+        <tbody>
+          <?php foreach($hotels as $hotel): ?>
+            <tr>
+              <th scope="row"><?php echo $hotel["name"]; ?></th>
+              <td><?php echo $hotel["description"];?></td>
+              <td><?php echo ($hotel['parking'] === true)? 'yes': 'no'; ?></td>
+              <td><?php echo $hotel["vote"]; ?></td>
+              <td><?php echo $hotel["distance_to_center"]; ?> Km</td>
+            </tr>
+          <?php endforeach?>
+        </tbody>
+        <!-- /informazioni richieste -->
+    
+    </table>
 
-    <!-- informazioni richieste -->
-    <tbody>
-      <?php foreach($hotels as $hotel): ?>
-        <tr>
-          <th scope="row"><?php echo $hotel["name"]; ?></th>
-          <td><?php echo $hotel["description"];?></td>
-          <td><?php echo ($hotel['parking'] === true)? 'yes': 'no'; ?></td>
-          <td><?php echo $hotel["vote"]; ?></td>
-          <td><?php echo $hotel["distance_to_center"]; ?> Km</td>
-        </tr>
-      <?php endforeach?>
-    </tbody>
-    <!-- /informazioni richieste -->
-
-</table>
+  </div>
 
 </body>
 </html>
