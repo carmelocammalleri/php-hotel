@@ -59,16 +59,7 @@ $hotels = [
 </head>
 <body>
 
-<!-- ista Hotel -->
-  <div>
-    <h1></h1> 
-    <span>Descrizione:  ?></span> <br> 
-    <span>Posto auto: </span> <br>
-    <span>Voto:</span> <br> 
-    <span> Km</span> 
-
-  </div>
-
+<!-- Lista Hotel -->
 
   <table class="table">
     <!-- caratteristiche hotel -->
@@ -83,17 +74,19 @@ $hotels = [
     </thead>
     <!-- /caratteristiche hotel -->
 
-  <tbody>
-    <?php foreach($hotels as $hotel): ?>
-      <tr>
-        <th scope="row"><?php echo $hotel["name"]; ?></th>
-        <td><?php echo $hotel["description"];?></td>
-        <td><?php echo ($hotel['parking'] === true)? 'yes': 'no'; ?></td>
-        <td><?php echo $hotel["vote"]; ?></td>
-        <td><?php echo $hotel["distance_to_center"]; ?> Km</td>
-      </tr>
-    <?php endforeach?>
-  </tbody>
+    <!-- informazioni richieste -->
+    <tbody>
+      <?php foreach($hotels as $hotel): ?>
+        <tr>
+          <th scope="row"><?php echo $hotel["name"]; ?></th>
+          <td><?php echo $hotel["description"];?></td>
+          <td><?php echo ($hotel['parking'] === true)? 'yes': 'no'; ?></td>
+          <td><?php echo $hotel["vote"]; ?></td>
+          <td><?php echo $hotel["distance_to_center"]; ?> Km</td>
+        </tr>
+      <?php endforeach?>
+    </tbody>
+    <!-- /informazioni richieste -->
 
 </table>
 
