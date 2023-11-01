@@ -41,6 +41,22 @@ $hotels = [
 
 ];
 
+$hotelWithPark = [];
+$park= isset($_POST['parking']);
+
+
+if($park){
+  foreach($hotels as $hotel){
+    if($hotel['parking']){
+      $hotelWithPark[] = $hotel;
+    }
+  }
+}else {
+  foreach($hotels as $hotel){
+    $hotelWithPark[] = $hotel;
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +75,14 @@ $hotels = [
 
 <!-- Lista Hotel -->
   <div class="container">
-    <h1>Hotel Lombardia</h1>
+    <h1>Scegli il tuo hotel</h1>
+    
+    <!-- checkbox button -->
+    <form action="index.php" method="POST">
+      <input type="checkbox" name="parking" value="true">
+      <label for="parking"> Parking</label><br>
+      <input type="submit" value="Cerca">
+    </form>
 
     <table class="table table-dark table-striped border my-3">
         <!-- caratteristiche hotel -->
@@ -76,7 +99,7 @@ $hotels = [
     
         <!-- informazioni richieste -->
         <tbody>
-          <?php foreach($hotels as $hotel): ?>
+          <?php foreach($hotelWithPark as $hotel): ?>
             <tr>
               <th scope="row"><?php echo $hotel["name"]; ?></th>
               <td><?php echo $hotel["description"];?></td>
@@ -89,19 +112,6 @@ $hotels = [
         <!-- /informazioni richieste -->
     
     </table>
-
-
-    <!-- radio button -->
-    <form class="d-flex" action="parking.php" method="POST">
-
-    <input type="radio" name="contact" id="contact_email" value="true" />
-    <label for="contact_email">Parking</label>
-
-    <input type="radio" name="contact" id="contact_phone" value="false" />
-    <label for="contact_phone">No parking</label>
-
-      <input type="submit">
-    </form> 
 
   </div>
 
